@@ -1,0 +1,139 @@
+<!--
+  Generated template for the Historia page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>{{historiaConf.nombre}}</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <p [innerHTML]="historia"></p>
+
+  <div *ngIf="ban == 1">Motor de batallas, resultado: {{res}} <p>1=pierdes, 2=ganas</p></div>
+  
+  <p>{{resBatalla}}</p>
+
+  <div *ngFor="let boton of botones">
+    <button ion-button color="danger" (click)="continuar(boton.opcion)">{{boton.txt}}</button>
+  </div>
+
+  <!--Eres un joven pueblerino, lo suficientemente joven para aún vivir con tus padres
+  pero no tanto como para que te digan que hacer, así que después de una discusión
+  con ellos decides salir a tomar el aire.
+
+  Mientras caminas recuerdas como tu padre te "aconseja" seguir sus pasos, que es tu
+  deber cuidar las tierras, tu cansado de que siempre te diga lo mismo le gritas: "YO 
+  NO SOY IGUAL QUE TU, YO QUIERO SER UN GUERRERO!!".
+
+  A lo lejos ves algo que te arranca de tus pensamientos: un hombre montado a caballo;
+  que raro, no recuerdas a algún vecino con ese aspecto, ¿que hará por aquí?; de repente
+  hace un giro brusco con el caballo levantado en sus patas traceras y comienza el 
+  galope, vez que desenvaina su espada en dirección a un hombre que torpemente corre 
+  por su vida, pero no es suficiente, la hoja de la espada atravieza el cuerpo del
+  hombre y en tu mente resuenan las palabras "YO QUIERO SER UN GUERRERO!!".
+
+  Es tu oportunidad de provar que no eres un simple campesino y demostrar de una vez
+  por todas de que estas hecho. 
+
+  ¿Qué decides hacer?
+
+  [Opc-1]: Enfrentarlo y ver que tal te va.
+  [Opc-2]: No arriesgarte y seguir tu camino.
+
+  [Opc-1]
+  Corres gritando y manoteando en dirección al hombre, sientes como la adrenalina
+  sube por tu estómago dandole fuerza a tus piernas y brazos.
+
+  El hombre voltea a verte con una mirada de desconcierto y diversión, baja de su
+  caballo y espera a que te acerques mientras limpia la sangre de su espada en la
+  camisa del hombre muerto, eso te hace enojar aún más y cuando está a tu alcance
+  sueltas un puñetazo que va directo a su cara.
+
+  Ni siquiera alcanzas a levantar el puño cuando el hombre ya te tiene sujeto del
+  cuello, sientes su gran mano asfixiandote; escuchas que algo dice pero no puedes
+  entender las palabras, lo único que viene a tu mente es el sollozo de tu madre
+  diciendote entre lágrimas que ese camino te iba a matar.
+
+  Y así fue, tu impulsividad te llevó a la muerte.
+  [Fin]
+
+  [Opc-2]
+  Es un hombre muy grande, facilmente ha de triplicar tu peso y obviamente cuenta 
+  con muchísima más experiencia, crees que lo más sensato es alejarse de ahí y 
+  rezar por que no haya más por los alrededores.
+
+  ¿Que decides hacer?
+
+  [Opc-3]: Investigar si hay más y que es lo que hacen aquí.
+  [Opc-4]: Regresar a tu casa a contarles a tus papás lo que viste, tal vez ellos sepan algo.
+
+  [Opc-3]
+  Sigues caminando por el sendero en el que ibas sin quitarte de la mente la imagen
+  del hombre muerto, crees recordar haberlo visto en el pueblo caminando por ahí,
+  no estas seguro si tiene uno o dos hijos, ¿cómo le ibas a decir a su esposa que
+  no hiciste nada para ayudarlo?, que eres un cobarde...
+
+  Ese pensamiento te hace enfurecer; adelante vez un joven con la misma pinta que 
+  el hombre de antes, recoges un palo que habia tirado en el camino y te abalanzas
+  sobre él.
+      [Batalla]
+  
+  [Res-1]: Haz perdido la batalla, aquí termina tu aventura. [Fin]
+
+  [Res-2]: El joven malherido por la golpiza que le diste te dijo
+  burlonamente que tu no podrías deterlos, que solo eras un estupido pueblerino y que
+  ellos eran apenas la fuerza de reconocimiento, que te inclinaras ante el gran maestro
+  y posiblemente te perdone la vida para unirte a sus fuerzas, como el... [Opc-4].
+  
+  [Opc-4]
+  Corres hacia tu casa esperando no encontrarte con alguno de esos salvajes cuando vez
+  una columna de humo proveniente del centro del pueblo, aprietas el paso y rezas 
+  por que todo este bien.
+
+  Te escondes detras de unos arbustos desde donde alcanzas a ver tu casa, parece que
+  por ahí esta todo tranquilo, pero notas que la puerta esta destrozada y vez un rastro
+  de sangre que sale por la puerta.
+
+  La posibilidad de que aún haya un enemigo dentro es muy alta, tal vez pudiste con 
+  uno de tu edad, ¿pero si te encuentras con alguien más salvaje?
+
+  ¿Que decides hacer?
+
+  [Opc-5]: Ir a investigar tu casa.
+  [Opc-6]: Huir antes que alguien te vea.
+
+  [Opc-5]
+  Volteas para todos lados, con el corazón latiendo a todo lo que da cruzas rápidamente
+  el camino hasta la puerta de tu casa, brincas sobre el rastro de sangre y vez que todo
+  está tirado, las ventanas estan rotas, la mesa volteada, escuchas un sonido que te 
+  hace pegar un brinco y al voltear vez que tu papá esta tirado destras de la mesa con
+  una herida en el estomago por la cual la sangre brota a chorros; corres a su lado y
+  sosteniendo su cabeza escuchas sus últimas palabras: "No hagas una estupidez".
+
+  Quieres gritar, salir corriendo a tirar golpes, pero recuerdas que solo eres un 
+  chiquillo con un sueño tonto, pero ahora ese sueño se ha convertido en una motivación;
+  sales de tu casa rápido pero sigiloso, cuidando que nadie te vea.
+
+  Emprendes el camino, dejando atrás el lugar que te vio nacer, con lágrimas en los
+  ojos pero con un objetivo en el corazón: convertirte en el mejor guerrero del mundo 
+  y encontrar a quien hizo esto para hacerlo pagar.
+  [Fin]
+
+  [Opc-6]
+  Mientras te alejas del lugar que te vio nacer tu mente no para de preguntarse ¿qué 
+  fue lo que paso?, ¿quiénes eran esos tipos?, ¿qué les pasó a tus papás?.
+
+  Pero tu no puedes hacer nada, no tienes la preparación física para hacerles frente,
+  ni siquiera sabes cuantos son y si siguen ahí, pero esto no termina aquí, vas a 
+  averiguar quienes son y, cuando llegue el momento indicado, los harás pagar por lo
+  que han hecho.
+  [Fin]-->
+
+</ion-content>
