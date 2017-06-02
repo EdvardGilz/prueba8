@@ -21,6 +21,14 @@
 		E25F7A6111324F05BD8782C2 /* CDVViewController+SplashScreen.m in Sources */ = {isa = PBXBuildFile; fileRef = BEDED30F848044708D5A4255 /* CDVViewController+SplashScreen.m */; };
 		8496625C3F244BD486312356 /* CDVStatusBar.m in Sources */ = {isa = PBXBuildFile; fileRef = 2613CD089D9E4385B8AF8251 /* CDVStatusBar.m */; };
 		3D457FAC03584BD9859BF03F /* IonicKeyboard.m in Sources */ = {isa = PBXBuildFile; fileRef = 256625E548E54229AD935943 /* IonicKeyboard.m */; };
+		1464857EFB8348F48102001E /* CDVAccelerometer.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C7356B3D7E24768A68171B5 /* CDVAccelerometer.m */; };
+		B84467985EBE4DB694F154A1 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EBC2310CE16A4090BF114C25 /* CoreMotion.framework */; };
+		0755774817034ED0BCE08538 /* CDVShake.m in Sources */ = {isa = PBXBuildFile; fileRef = A55314B92B8B48F682473203 /* CDVShake.m */; };
+		78C2B7EE27E84C1ABFF3AF6C /* NativeAudio.m in Sources */ = {isa = PBXBuildFile; fileRef = 071BF651B14D4DE2A84452E0 /* NativeAudio.m */; };
+		23E43AE0D9C44AD6A4A7D1B5 /* NativeAudioAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = C300417AFEA54C318D476D7D /* NativeAudioAsset.m */; };
+		3157207CB63E4EAAA431DBB3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6AEC258549BF4742A24AA1BA /* Foundation.framework */; };
+		A74B5CBC7BC3435DB5E2ACA7 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 50AA98A52458436386C8BC80 /* AVFoundation.framework */; };
+		26111F155F7040E2A66DD821 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 34198C08FF52499A9F588818 /* AudioToolbox.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -72,6 +80,18 @@
 		B44F0DB8C6604597ABB5FED5 /* CDVStatusBar.h */ = {isa = PBXFileReference; name = "CDVStatusBar.h"; path = "cordova-plugin-statusbar/CDVStatusBar.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
 		256625E548E54229AD935943 /* IonicKeyboard.m */ = {isa = PBXFileReference; name = "IonicKeyboard.m"; path = "ionic-plugin-keyboard/IonicKeyboard.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
 		1A8ADDA786A547EAA4B6FC82 /* IonicKeyboard.h */ = {isa = PBXFileReference; name = "IonicKeyboard.h"; path = "ionic-plugin-keyboard/IonicKeyboard.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		2C7356B3D7E24768A68171B5 /* CDVAccelerometer.m */ = {isa = PBXFileReference; name = "CDVAccelerometer.m"; path = "cordova-plugin-device-motion/CDVAccelerometer.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		90DB06633D46417A8975D9A1 /* CDVAccelerometer.h */ = {isa = PBXFileReference; name = "CDVAccelerometer.h"; path = "cordova-plugin-device-motion/CDVAccelerometer.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		EBC2310CE16A4090BF114C25 /* CoreMotion.framework */ = {isa = PBXFileReference; name = "CoreMotion.framework"; path = "System/Library/Frameworks/CoreMotion.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		A55314B92B8B48F682473203 /* CDVShake.m */ = {isa = PBXFileReference; name = "CDVShake.m"; path = "cordova-plugin-shake/CDVShake.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		DE898C8134B24380B4A3030A /* CDVShake.h */ = {isa = PBXFileReference; name = "CDVShake.h"; path = "cordova-plugin-shake/CDVShake.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		071BF651B14D4DE2A84452E0 /* NativeAudio.m */ = {isa = PBXFileReference; name = "NativeAudio.m"; path = "cordova-plugin-nativeaudio/NativeAudio.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		C300417AFEA54C318D476D7D /* NativeAudioAsset.m */ = {isa = PBXFileReference; name = "NativeAudioAsset.m"; path = "cordova-plugin-nativeaudio/NativeAudioAsset.m"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; explicitFileType = undefined; includeInIndex = 0; };
+		AACF53B72E244986B3685978 /* NativeAudio.h */ = {isa = PBXFileReference; name = "NativeAudio.h"; path = "cordova-plugin-nativeaudio/NativeAudio.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		9DE843AAC5E146118FB470E9 /* NativeAudioAsset.h */ = {isa = PBXFileReference; name = "NativeAudioAsset.h"; path = "cordova-plugin-nativeaudio/NativeAudioAsset.h"; sourceTree = "<group>"; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; explicitFileType = undefined; includeInIndex = 0; };
+		6AEC258549BF4742A24AA1BA /* Foundation.framework */ = {isa = PBXFileReference; name = "Foundation.framework"; path = "System/Library/Frameworks/Foundation.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		50AA98A52458436386C8BC80 /* AVFoundation.framework */ = {isa = PBXFileReference; name = "AVFoundation.framework"; path = "System/Library/Frameworks/AVFoundation.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
+		34198C08FF52499A9F588818 /* AudioToolbox.framework */ = {isa = PBXFileReference; name = "AudioToolbox.framework"; path = "System/Library/Frameworks/AudioToolbox.framework"; sourceTree = SDKROOT; fileEncoding = undefined; lastKnownFileType = wrapper.framework; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +100,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				301BF552109A68D80062928A /* libCordova.a in Frameworks */,
+				B84467985EBE4DB694F154A1 /* CoreMotion.framework in Frameworks */,
+				3157207CB63E4EAAA431DBB3 /* Foundation.framework in Frameworks */,
+				A74B5CBC7BC3435DB5E2ACA7 /* AVFoundation.framework in Frameworks */,
+				26111F155F7040E2A66DD821 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -149,6 +173,10 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EBC2310CE16A4090BF114C25 /* CoreMotion.framework */,
+				6AEC258549BF4742A24AA1BA /* Foundation.framework */,
+				50AA98A52458436386C8BC80 /* AVFoundation.framework */,
+				34198C08FF52499A9F588818 /* AudioToolbox.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -186,6 +214,14 @@
 				B44F0DB8C6604597ABB5FED5 /* CDVStatusBar.h */,
 				256625E548E54229AD935943 /* IonicKeyboard.m */,
 				1A8ADDA786A547EAA4B6FC82 /* IonicKeyboard.h */,
+				2C7356B3D7E24768A68171B5 /* CDVAccelerometer.m */,
+				90DB06633D46417A8975D9A1 /* CDVAccelerometer.h */,
+				A55314B92B8B48F682473203 /* CDVShake.m */,
+				DE898C8134B24380B4A3030A /* CDVShake.h */,
+				071BF651B14D4DE2A84452E0 /* NativeAudio.m */,
+				C300417AFEA54C318D476D7D /* NativeAudioAsset.m */,
+				AACF53B72E244986B3685978 /* NativeAudio.h */,
+				9DE843AAC5E146118FB470E9 /* NativeAudioAsset.h */,
 			);
 			name = Plugins;
 			path = "HelloCordova/Plugins";
@@ -306,6 +342,10 @@
 				E25F7A6111324F05BD8782C2 /* CDVViewController+SplashScreen.m in Sources */,
 				8496625C3F244BD486312356 /* CDVStatusBar.m in Sources */,
 				3D457FAC03584BD9859BF03F /* IonicKeyboard.m in Sources */,
+				1464857EFB8348F48102001E /* CDVAccelerometer.m in Sources */,
+				0755774817034ED0BCE08538 /* CDVShake.m in Sources */,
+				78C2B7EE27E84C1ABFF3AF6C /* NativeAudio.m in Sources */,
+				23E43AE0D9C44AD6A4A7D1B5 /* NativeAudioAsset.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

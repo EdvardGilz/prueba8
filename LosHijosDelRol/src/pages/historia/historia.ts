@@ -3,6 +3,8 @@ import { IonicPage, NavParams, NavController } from 'ionic-angular';
 
 import { HistoriasDataModel } from '../../models/models';
 
+import { Batalla } from '../batalla/batalla';
+
 /**
  * Generated class for the Historia page.
  *
@@ -119,6 +121,8 @@ Pero tu no puedes hacer nada, no tienes la preparación física para hacerles fr
             }
           }
           if (this.ban == 1) {
+            this.navCtrl.push(Batalla);
+            
             this.res = Math.floor((Math.random() * 2) + 1);
             for (var j=0; j<tmp.length; j++) {
               if (tmp[j].search("]") > -1) {
