@@ -10,13 +10,15 @@ import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { Historia } from '../pages/historia/historia';
 import { Batalla } from '../pages/batalla/batalla';
+import { Lista } from '../pages/lista/lista';
 
 @NgModule({
   declarations: [
     MyApp,
     HomePage,
     Historia,
-    Batalla
+    Batalla,
+    Lista
   ],
   imports: [
     BrowserModule,
@@ -27,7 +29,8 @@ import { Batalla } from '../pages/batalla/batalla';
     MyApp,
     HomePage,
     Historia,
-    Batalla
+    Batalla,
+    Lista
   ],
   providers: [
     StatusBar,
