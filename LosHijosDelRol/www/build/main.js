@@ -55805,8 +55805,7 @@ exports.isFunction = isFunction;
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(31);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_shake__ = __webpack_require__(105);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_native_audio__ = __webpack_require__(104);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__motor_motor__ = __webpack_require__(269);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Batalla; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -55820,7 +55819,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 
 
 
-
 /**
  * Generated class for the Batalla page.
  *
@@ -55828,103 +55826,22 @@ var __metadata = (this && this.__metadata) || function (k, v) {
  * on Ionic pages and navigation.
  */
 var Batalla = (function () {
-    function Batalla(navCtrl, navParams, shake, nativeAudio) {
-        var _this = this;
+    function Batalla(navCtrl) {
         this.navCtrl = navCtrl;
-        this.navParams = navParams;
-        this.shake = shake;
-        this.nativeAudio = nativeAudio;
-        this.imagen = "";
-        this.nativeAudio.preloadComplex('dado', 'assets/dado/efect.mp3', 1, 1, 0);
-        var watch = shake.startWatch(20).subscribe(function () {
-            _this.nativeAudio.play('dado');
-            _this.imagen = "assets/dado/d20.gif";
-            clearTimeout(_this.tiempo);
-            _this.tiempo = setTimeout(function () {
-                watch.unsubscribe();
-                _this.verificar();
-            }, 3000);
-        });
     }
-    Batalla.prototype.verificar = function () {
-        var numero = Math.floor((Math.random() * 20) + 1);
-        switch (numero) {
-            case 1:
-                this.imagen = "assets/dado/d20-1.gif";
-                break;
-            case 2:
-                this.imagen = "assets/dado/d20-2.gif";
-                break;
-            case 3:
-                this.imagen = "assets/dado/d20-3.gif";
-                break;
-            case 4:
-                this.imagen = "assets/dado/d20-4.gif";
-                break;
-            case 5:
-                this.imagen = "assets/dado/d20-5.gif";
-                break;
-            case 6:
-                this.imagen = "assets/dado/d20-6.gif";
-                break;
-            case 7:
-                this.imagen = "assets/dado/d20-7.gif";
-                break;
-            case 8:
-                this.imagen = "assets/dado/d20-8.gif";
-                break;
-            case 9:
-                this.imagen = "assets/dado/d20-9.gif";
-                break;
-            case 10:
-                this.imagen = "assets/dado/d20-10.gif";
-                break;
-            case 11:
-                this.imagen = "assets/dado/d20-11.gif";
-                break;
-            case 12:
-                this.imagen = "assets/dado/d20-12.gif";
-                break;
-            case 13:
-                this.imagen = "assets/dado/d20-13.gif";
-                break;
-            case 14:
-                this.imagen = "assets/dado/d20-14.gif";
-                break;
-            case 15:
-                this.imagen = "assets/dado/d20-15.gif";
-                break;
-            case 16:
-                this.imagen = "assets/dado/d20-16.gif";
-                break;
-            case 17:
-                this.imagen = "assets/dado/d20-17.gif";
-                break;
-            case 18:
-                this.imagen = "assets/dado/d20-18.gif";
-                break;
-            case 19:
-                this.imagen = "assets/dado/d20-19.gif";
-                break;
-            case 20:
-                this.imagen = "assets/dado/d20-20.gif";
-                break;
-            default:
-                break;
-        }
-        this.nativeAudio.stop('dado');
+    Batalla.prototype.batalla = function () {
+        this.navCtrl.push(__WEBPACK_IMPORTED_MODULE_2__motor_motor__["a" /* Motor */]);
     };
     return Batalla;
 }());
 Batalla = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-batalla',template:/*ion-inline-start:"/Users/EdvardGilz/Documents/proyectosGit/prueba8/LosHijosDelRol/src/pages/batalla/batalla.html"*/'<!--\n  Generated template for the Batalla page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar>\n    <ion-title>batalla</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <h3 *ngIf="imagen == \'\'">Agita para lanzar el dado</h3>\n  <img src="{{imagen}}">\n</ion-content>\n'/*ion-inline-end:"/Users/EdvardGilz/Documents/proyectosGit/prueba8/LosHijosDelRol/src/pages/batalla/batalla.html"*/,
+        selector: 'page-batalla',template:/*ion-inline-start:"/Users/EdvardGilz/Documents/proyectosGit/prueba8/LosHijosDelRol/src/pages/batalla/batalla.html"*/'<!--\n  Generated template for the Batalla page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="danger">\n    <ion-title>\n      Batallas\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n\n<ion-content padding>\n  <h3> Prueba tu suerte en una batalla rápida. </h3>\n\n  <ion-list>\n    <ion-item> Batallas jugadas: 0 </ion-item>\n    <ion-item> Batallas ganadas: 0 </ion-item>\n    <ion-item> Batallas perdidas: 0 </ion-item>\n  </ion-list>\n\n  <button ion-button color="danger" (click)="batalla()">A luchar!</button>\n\n</ion-content>\n'/*ion-inline-end:"/Users/EdvardGilz/Documents/proyectosGit/prueba8/LosHijosDelRol/src/pages/batalla/batalla.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_shake__["a" /* Shake */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_shake__["a" /* Shake */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_native_audio__["a" /* NativeAudio */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_native_audio__["a" /* NativeAudio */]) === "function" && _d || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
 ], Batalla);
 
-var _a, _b, _c, _d;
 //# sourceMappingURL=batalla.js.map
 
 /***/ }),
@@ -56109,7 +56026,7 @@ var HomePage = (function () {
 }());
 HomePage = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
-        selector: 'page-home',template:/*ion-inline-start:"/Users/EdvardGilz/Documents/proyectosGit/prueba8/LosHijosDelRol/src/pages/home/home.html"*/'<ion-header>\n  <ion-navbar color="danger">\n    <ion-title>\n      Leyendas de Los Hijos del Rol\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-tabs>\n  <ion-tab tabIcon="list" [root]="tab1"></ion-tab>\n  <ion-tab tabIcon="trophy" [root]="tab2"></ion-tab>\n  <ion-tab tabIcon="person" [root]="tab3"></ion-tab>\n</ion-tabs>'/*ion-inline-end:"/Users/EdvardGilz/Documents/proyectosGit/prueba8/LosHijosDelRol/src/pages/home/home.html"*/
+        selector: 'page-home',template:/*ion-inline-start:"/Users/EdvardGilz/Documents/proyectosGit/prueba8/LosHijosDelRol/src/pages/home/home.html"*/'<ion-tabs color="danger">\n  <ion-tab tabIcon="list" [root]="tab1"></ion-tab>\n  <ion-tab tabIcon="bonfire" [root]="tab2"></ion-tab>\n  <ion-tab tabIcon="person" [root]="tab3"></ion-tab>\n</ion-tabs>'/*ion-inline-end:"/Users/EdvardGilz/Documents/proyectosGit/prueba8/LosHijosDelRol/src/pages/home/home.html"*/
     }),
     __metadata("design:paramtypes", [])
 ], HomePage);
@@ -74889,15 +74806,19 @@ module.exports = g;
 var map = {
 	"../pages/batalla/batalla.module": [
 		264,
-		5
+		7
 	],
 	"../pages/historia/historia.module": [
 		265,
-		4
+		6
 	],
 	"../pages/lista/lista.module": [
 		266,
-		3
+		1
+	],
+	"../pages/motor/motor.module": [
+		268,
+		0
 	]
 };
 function webpackAsyncContext(req) {
@@ -74931,6 +74852,7 @@ webpackAsyncContext.id = 196;
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_9__pages_historia_historia__ = __webpack_require__(100);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_10__pages_batalla_batalla__ = __webpack_require__(99);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_11__pages_lista_lista__ = __webpack_require__(267);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_12__pages_motor_motor__ = __webpack_require__(269);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -74938,6 +74860,7 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
 
 
 
@@ -74962,7 +74885,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_8__pages_home_home__["a" /* HomePage */],
             __WEBPACK_IMPORTED_MODULE_9__pages_historia_historia__["a" /* Historia */],
             __WEBPACK_IMPORTED_MODULE_10__pages_batalla_batalla__["a" /* Batalla */],
-            __WEBPACK_IMPORTED_MODULE_11__pages_lista_lista__["a" /* Lista */]
+            __WEBPACK_IMPORTED_MODULE_11__pages_lista_lista__["a" /* Lista */],
+            __WEBPACK_IMPORTED_MODULE_12__pages_motor_motor__["a" /* Motor */]
         ],
         imports: [
             __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -74970,7 +74894,8 @@ AppModule = __decorate([
                 links: [
                     { loadChildren: '../pages/batalla/batalla.module#BatallaModule', name: 'Batalla', segment: 'batalla', priority: 'low', defaultHistory: [] },
                     { loadChildren: '../pages/historia/historia.module#HistoriaModule', name: 'Historia', segment: 'historia', priority: 'low', defaultHistory: [] },
-                    { loadChildren: '../pages/lista/lista.module#ListaModule', name: 'Lista', segment: 'lista', priority: 'low', defaultHistory: [] }
+                    { loadChildren: '../pages/lista/lista.module#ListaModule', name: 'Lista', segment: 'lista', priority: 'low', defaultHistory: [] },
+                    { loadChildren: '../pages/motor/motor.module#MotorModule', name: 'Motor', segment: 'motor', priority: 'low', defaultHistory: [] }
                 ]
             })
         ],
@@ -74980,7 +74905,8 @@ AppModule = __decorate([
             __WEBPACK_IMPORTED_MODULE_8__pages_home_home__["a" /* HomePage */],
             __WEBPACK_IMPORTED_MODULE_9__pages_historia_historia__["a" /* Historia */],
             __WEBPACK_IMPORTED_MODULE_10__pages_batalla_batalla__["a" /* Batalla */],
-            __WEBPACK_IMPORTED_MODULE_11__pages_lista_lista__["a" /* Lista */]
+            __WEBPACK_IMPORTED_MODULE_11__pages_lista_lista__["a" /* Lista */],
+            __WEBPACK_IMPORTED_MODULE_12__pages_motor_motor__["a" /* Motor */]
         ],
         providers: [
             __WEBPACK_IMPORTED_MODULE_4__ionic_native_status_bar__["a" /* StatusBar */],
@@ -112645,11 +112571,336 @@ Lista = __decorate([
     __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
         selector: 'page-lista',template:/*ion-inline-start:"/Users/EdvardGilz/Documents/proyectosGit/prueba8/LosHijosDelRol/src/pages/lista/lista.html"*/'<!--\n  Generated template for the Lista page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n  <ion-navbar color="danger">\n    <ion-title>\n      Leyendas de Los Hijos del Rol\n    </ion-title>\n  </ion-navbar>\n</ion-header>\n\n<ion-content padding>\n  <ion-list>\n    <ion-item *ngFor="let historia of historias" (click)="ir(historia)">{{historia.nombre}}</ion-item>\n  </ion-list>\n</ion-content>'/*ion-inline-end:"/Users/EdvardGilz/Documents/proyectosGit/prueba8/LosHijosDelRol/src/pages/lista/lista.html"*/,
     }),
-    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object])
+    __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]])
 ], Lista);
 
-var _a;
 //# sourceMappingURL=lista.js.map
+
+/***/ }),
+/* 268 */,
+/* 269 */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__(0);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_ionic_angular__ = __webpack_require__(31);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__ionic_native_shake__ = __webpack_require__(105);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__ionic_native_native_audio__ = __webpack_require__(104);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return Motor; });
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+/**
+ * Generated class for the Motor page.
+ *
+ * See http://ionicframework.com/docs/components/#navigation for more info
+ * on Ionic pages and navigation.
+ */
+var Motor = (function () {
+    function Motor(navCtrl, navParams, shake, nativeAudio) {
+        this.navCtrl = navCtrl;
+        this.navParams = navParams;
+        this.shake = shake;
+        this.nativeAudio = nativeAudio;
+        this.imagen = "assets/dado/d20-1.gif";
+        this.historial = [];
+        this.jugador = 0;
+        this.mensaje = 0;
+        this.sangreJ1 = 20;
+        this.sangreJ2 = 20;
+        this.mensajeRes = "";
+        this.nativeAudio.preloadComplex('dado', 'assets/dado/efect.mp3', 1, 1, 0);
+    }
+    Motor.prototype.accion = function (tipo) {
+        var _this = this;
+        this.mensaje = 1;
+        if (this.jugador == 0) {
+            this.agitar(tipo);
+        }
+        else {
+            this.tiempo = setTimeout(function () {
+                _this.agitarVR(tipo);
+            }, 3000);
+        }
+    };
+    Motor.prototype.agitar = function (tipo) {
+        var _this = this;
+        var watch = this.shake.startWatch(20).subscribe(function () {
+            _this.nativeAudio.play('dado');
+            _this.imagen = "assets/dado/d20.gif";
+            clearTimeout(_this.tiempo);
+            _this.tiempo = setTimeout(function () {
+                watch.unsubscribe();
+                _this.verificar(tipo);
+            }, 3000);
+        });
+    };
+    Motor.prototype.agitarVR = function (tipo) {
+        var _this = this;
+        this.nativeAudio.play('dado');
+        this.imagen = "assets/dado/d20.gif";
+        this.tiempo = setTimeout(function () {
+            _this.verificar(tipo);
+        }, 3000);
+    };
+    Motor.prototype.verificar = function (tipo) {
+        this.mensaje = 0;
+        var numero = Math.floor((Math.random() * 20) + 1);
+        var accion;
+        switch (numero) {
+            case 1:
+                this.imagen = "assets/dado/d20-1.gif";
+                break;
+            case 2:
+                this.imagen = "assets/dado/d20-2.gif";
+                break;
+            case 3:
+                this.imagen = "assets/dado/d20-3.gif";
+                break;
+            case 4:
+                this.imagen = "assets/dado/d20-4.gif";
+                break;
+            case 5:
+                this.imagen = "assets/dado/d20-5.gif";
+                break;
+            case 6:
+                this.imagen = "assets/dado/d20-6.gif";
+                break;
+            case 7:
+                this.imagen = "assets/dado/d20-7.gif";
+                break;
+            case 8:
+                this.imagen = "assets/dado/d20-8.gif";
+                break;
+            case 9:
+                this.imagen = "assets/dado/d20-9.gif";
+                break;
+            case 10:
+                this.imagen = "assets/dado/d20-10.gif";
+                break;
+            case 11:
+                this.imagen = "assets/dado/d20-11.gif";
+                break;
+            case 12:
+                this.imagen = "assets/dado/d20-12.gif";
+                break;
+            case 13:
+                this.imagen = "assets/dado/d20-13.gif";
+                break;
+            case 14:
+                this.imagen = "assets/dado/d20-14.gif";
+                break;
+            case 15:
+                this.imagen = "assets/dado/d20-15.gif";
+                break;
+            case 16:
+                this.imagen = "assets/dado/d20-16.gif";
+                break;
+            case 17:
+                this.imagen = "assets/dado/d20-17.gif";
+                break;
+            case 18:
+                this.imagen = "assets/dado/d20-18.gif";
+                break;
+            case 19:
+                this.imagen = "assets/dado/d20-19.gif";
+                break;
+            case 20:
+                this.imagen = "assets/dado/d20-20.gif";
+                break;
+            default:
+                break;
+        }
+        this.nativeAudio.stop('dado');
+        if (tipo == 1) {
+            accion = "ataque";
+        }
+        else if (tipo == 2) {
+            accion = "defensa";
+        }
+        this.historial.push({ "valor": numero, "accion": accion, "accionVal": tipo, "imagen": this.imagen, "jugador": this.jugador });
+        if (this.jugador == 0) {
+            this.jugador = 1;
+            this.accion(Math.floor((Math.random() * 2) + 1));
+        }
+        else {
+            var longitud = this.historial.length;
+            var j1 = this.historial[longitud - 2];
+            var j2 = this.historial[longitud - 1];
+            if (j1.accionVal == 1) {
+                if (j1.valor == 20) {
+                    if (j2.accionVal == 2) {
+                        if (j2.valor == 20) {
+                            this.mensajeRes = "Tu golpe fue mortal, pero su defensa es impenetrable";
+                        }
+                        else {
+                            // CALCULO
+                            var resta = j1.valor - j2.valor;
+                            this.sangreJ2 -= resta;
+                            if (this.sangreJ2 <= 0) {
+                                this.mensajeRes = "Acabas con tu enemigo gracias a ese golpe mortal";
+                                /** GANAS */
+                                this.mensajeResFinal = "GANASTE!!";
+                                this.jugador = 3;
+                            }
+                            else {
+                                this.mensajeRes = "Lanzas un golpe mortal, pero no es suficiente, ¡sigue vivo!";
+                            }
+                        }
+                    }
+                    else {
+                        if (j2.valor == 20) {
+                            this.mensajeRes = "La fuerza de tu golpe es inmensurable, lamentablemente también la de tu enemigo, ambos mueren al instante";
+                            /** TODOS MUERTOS */
+                            this.mensajeResFinal = "AMBOS MUEREN!!";
+                            this.jugador = 3;
+                        }
+                        else {
+                            this.mensajeRes = "Lanzas un golpe mortal, tu enemigo no puede hacer nada";
+                            /** GANAS */
+                            this.mensajeResFinal = "GANASTE!!";
+                            this.jugador = 3;
+                        }
+                    }
+                }
+                else {
+                    if (j2.accionVal == 2) {
+                        if (j2.valor == 20) {
+                            this.mensajeRes = "La defensa de tu enemigo es impenetrable, no logras hacerle ni un rasguño";
+                        }
+                        else {
+                            // CALCULO
+                            if (j1.valor <= j2.valor) {
+                                this.mensajeRes = "Tu golpe no es lo suficientemente fuerte como para dañar al enemigo";
+                            }
+                            else {
+                                var resta = j1.valor - j2.valor;
+                                this.sangreJ2 -= resta;
+                                if (this.sangreJ2 <= 0) {
+                                    this.mensajeRes = "Logras acabar con tu enemigo";
+                                    /** GANAS */
+                                    this.mensajeResFinal = "GANASTE!!";
+                                    this.jugador = 3;
+                                }
+                                else {
+                                    this.mensajeRes = "Tu enemigo aún tiene energia para un round más";
+                                }
+                            }
+                        }
+                    }
+                    else {
+                        if (j2.valor == 20) {
+                            this.mensajeRes = "Ese golpe fue demasiado para ti, mueres al instante";
+                            /** PIERDES */
+                            this.mensajeResFinal = "PERDISTE!!";
+                            this.jugador = 3;
+                        }
+                        else {
+                            // CALCULO
+                            this.sangreJ2 -= j1.valor;
+                            if (this.sangreJ2 <= 0) {
+                                this.mensajeRes = "Tu enemigo no pudo con tu habilidad y muere";
+                                /** GANAS */
+                                this.mensajeResFinal = "GANASTE!!";
+                                this.jugador = 3;
+                            }
+                            else {
+                                this.sangreJ1 -= j2.valor;
+                                if (this.sangreJ1 <= 0) {
+                                    this.mensajeRes = "No aguantas más y mueres a manos del enemigo";
+                                    /** PIERDES */
+                                    this.mensajeResFinal = "PERDISTE!!";
+                                    this.jugador = 3;
+                                }
+                                else {
+                                    this.mensajeRes = "Sigues de pie a pesar de las heridas";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            else if (j1.accionVal == 2) {
+                if (j1.valor == 20) {
+                    if (j2.accionVal == 2) {
+                        this.mensajeRes = "Nadie se movió, ¡que esperan!";
+                    }
+                    else {
+                        if (j2.valor == 20) {
+                            this.mensajeRes = "Tu defensa es efectiva ante un ataque tan poderoso y no te hace daño alguno";
+                        }
+                        else {
+                            this.mensajeRes = "Los golpes de tu enemigo no son nada a comparación de tu defensa";
+                        }
+                    }
+                }
+                else {
+                    if (j2.accionVal == 2) {
+                        this.mensajeRes = "¿A que juegan?";
+                    }
+                    else {
+                        if (j2.valor == 20) {
+                            var resta = j2.valor - j1.valor;
+                            this.sangreJ1 -= resta;
+                            if (this.sangreJ1 <= 0) {
+                                this.mensajeRes = "No puedes hacer nada frente a tal ataque, mueres al instante";
+                                /** PIERDES */
+                                this.mensajeResFinal = "PERDISTE!!";
+                                this.jugador = 3;
+                            }
+                            else {
+                                this.mensajeRes = "A pesar del tremendo ataque, aún sigues de pie";
+                            }
+                        }
+                        else {
+                            if (j1.valor >= j2.valor) {
+                                this.mensajeRes = "Resistes el golpe sin titubeos";
+                            }
+                            else {
+                                // CALCULO
+                                var resta = j2.valor - j1.valor;
+                                this.sangreJ1 -= resta;
+                                if (this.sangreJ1 <= 0) {
+                                    this.mensajeRes = "No puedes continuar, tu defensa falló y mueres";
+                                    /** PIERDES */
+                                    this.mensajeResFinal = "PERDISTE!!";
+                                    this.jugador = 3;
+                                }
+                                else {
+                                    this.mensajeRes = "Aún sigues vivo a pesar del daño";
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            if (this.jugador != 3) {
+                this.jugador = 0;
+            }
+        }
+    };
+    return Motor;
+}());
+Motor = __decorate([
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_1_ionic_angular__["e" /* IonicPage */])(),
+    __webpack_require__.i(__WEBPACK_IMPORTED_MODULE_0__angular_core__["_5" /* Component */])({
+        selector: 'page-motor',template:/*ion-inline-start:"/Users/EdvardGilz/Documents/proyectosGit/prueba8/LosHijosDelRol/src/pages/motor/motor.html"*/'<!--\n  Generated template for the Motor page.\n\n  See http://ionicframework.com/docs/components/#navigation for more info on\n  Ionic pages and navigation.\n-->\n<ion-header>\n\n  <ion-navbar color="danger">\n    <ion-title>Batalla rápida</ion-title>\n  </ion-navbar>\n\n</ion-header>\n\n\n<ion-content padding>\n  <p>Un enemigo salvaje aparece, ¿qué vas a hacer?</p>\n\n  <div *ngIf="jugador == 0">\n    <button ion-button color="danger" (click)="accion(1)">ATACAR</button>\n    <button ion-button color="danger" (click)="accion(2)">DEFENDER</button>\n    <h3 *ngIf="mensaje == 1">Agita para lanzar el dado</h3>\n  </div>\n\n  <h3 *ngIf="jugador == 1">Turno del enemigo</h3>\n\n  <img *ngIf="jugador != 3" src="{{imagen}}">\n  \n  <h3>{{mensajeRes}}</h3>\n  <h3>{{mensajeResFinal}}</h3>\n\n  <div *ngIf="historial.length > 0">\n    <h3>Movimientos:</h3>\n\n    <ion-grid>\n      <ion-row>\n        <ion-col>Tu {{sangreJ1}}</ion-col>\n        <ion-col text-right>Enemigo {{sangreJ2}}</ion-col>\n      </ion-row>\n    </ion-grid>\n\n    <ion-list>\n      <ion-item *ngFor="let batalla of historial">\n        <ion-thumbnail item-left *ngIf="batalla.jugador == 0">\n          <img src="{{batalla.imagen}}">\n        </ion-thumbnail>\n        <p text-center>{{batalla.accion}}</p>\n        <ion-thumbnail item-right *ngIf="batalla.jugador == 1">\n          <img src="{{batalla.imagen}}">\n        </ion-thumbnail>\n      </ion-item>\n    </ion-list>\n\n  </div>\n  \n</ion-content>\n'/*ion-inline-end:"/Users/EdvardGilz/Documents/proyectosGit/prueba8/LosHijosDelRol/src/pages/motor/motor.html"*/,
+    }),
+    __metadata("design:paramtypes", [typeof (_a = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["f" /* NavController */]) === "function" && _a || Object, typeof (_b = typeof __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_1_ionic_angular__["g" /* NavParams */]) === "function" && _b || Object, typeof (_c = typeof __WEBPACK_IMPORTED_MODULE_2__ionic_native_shake__["a" /* Shake */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_2__ionic_native_shake__["a" /* Shake */]) === "function" && _c || Object, typeof (_d = typeof __WEBPACK_IMPORTED_MODULE_3__ionic_native_native_audio__["a" /* NativeAudio */] !== "undefined" && __WEBPACK_IMPORTED_MODULE_3__ionic_native_native_audio__["a" /* NativeAudio */]) === "function" && _d || Object])
+], Motor);
+
+var _a, _b, _c, _d;
+//# sourceMappingURL=motor.js.map
 
 /***/ })
 /******/ ]);

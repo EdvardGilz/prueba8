@@ -5,15 +5,23 @@
   Ionic pages and navigation.
 -->
 <ion-header>
-
-  <ion-navbar>
-    <ion-title>batalla</ion-title>
+  <ion-navbar color="danger">
+    <ion-title>
+      Batallas
+    </ion-title>
   </ion-navbar>
-
 </ion-header>
 
 
 <ion-content padding>
-  <h3 *ngIf="imagen == ''">Agita para lanzar el dado</h3>
-  <img src="{{imagen}}">
+  <h3> Prueba tu suerte en una batalla rápida. </h3>
+
+  <ion-list>
+    <ion-item> Batallas jugadas: 0 </ion-item>
+    <ion-item> Batallas ganadas: 0 </ion-item>
+    <ion-item> Batallas perdidas: 0 </ion-item>
+  </ion-list>
+
+  <button ion-button color="danger" (click)="batalla()">A luchar!</button>
+
 </ion-content>

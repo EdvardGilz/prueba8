@@ -1,0 +1,56 @@
+<!--
+  Generated template for the Motor page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar color="danger">
+    <ion-title>Batalla rápida</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <p>Un enemigo salvaje aparece, ¿qué vas a hacer?</p>
+
+  <div *ngIf="jugador == 0">
+    <button ion-button color="danger" (click)="accion(1)">ATACAR</button>
+    <button ion-button color="danger" (click)="accion(2)">DEFENDER</button>
+    <h3 *ngIf="mensaje == 1">Agita para lanzar el dado</h3>
+  </div>
+
+  <h3 *ngIf="jugador == 1">Turno del enemigo</h3>
+
+  <img *ngIf="jugador != 3" src="{{imagen}}">
+  
+  <h3>{{mensajeRes}}</h3>
+  <h3>{{mensajeResFinal}}</h3>
+
+  <div *ngIf="historial.length > 0">
+    <h3>Movimientos:</h3>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col>Tu {{sangreJ1}}</ion-col>
+        <ion-col text-right>Enemigo {{sangreJ2}}</ion-col>
+      </ion-row>
+    </ion-grid>
+
+    <ion-list>
+      <ion-item *ngFor="let batalla of historial">
+        <ion-thumbnail item-left *ngIf="batalla.jugador == 0">
+          <img src="{{batalla.imagen}}">
+        </ion-thumbnail>
+        <p text-center>{{batalla.accion}}</p>
+        <ion-thumbnail item-right *ngIf="batalla.jugador == 1">
+          <img src="{{batalla.imagen}}">
+        </ion-thumbnail>
+      </ion-item>
+    </ion-list>
+
+  </div>
+  
+</ion-content>

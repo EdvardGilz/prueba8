@@ -11,6 +11,7 @@ import { HomePage } from '../pages/home/home';
 import { Historia } from '../pages/historia/historia';
 import { Batalla } from '../pages/batalla/batalla';
 import { Lista } from '../pages/lista/lista';
+import { Motor } from '../pages/motor/motor';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { Lista } from '../pages/lista/lista';
     HomePage,
     Historia,
     Batalla,
-    Lista
+    Lista,
+    Motor
   ],
   imports: [
     BrowserModule,
@@ -30,7 +32,8 @@ import { Lista } from '../pages/lista/lista';
     HomePage,
     Historia,
     Batalla,
-    Lista
+    Lista,
+    Motor
   ],
   providers: [
     StatusBar,
